@@ -1,0 +1,16 @@
+ansible-galaxy remove   -角色    删除galaxy角色包
+ansible-galaxy list  -角色      查看角色版本/是否存在
+ansible-galaxy install  -角色        安装galaxy,角色包
+ansible-galaxy list         列出所有已经安装的galaxy
+ansible-galaxy info username.role_name     使用info命令可查看有关特定角色的更多详细信息
+ansible-galaxy search elasticsearch --author geerlingguy      通过标签，平台，作者和多个关键字搜索Galaxy数据库
+ansible-galaxy init --role-skeleton = / path / to / skeleton role_name     可以提供自定义角色骨架目录  
+当提供骨架时，init将：
+将所有文件和目录从骨架复制到新角色
+在模板文件夹之外找到的任何.j2文件将被渲染为模板。 目前唯一有用的变量是role_name
+.git文件夹和任何.git_keep文件将不被复制
+ansible-galaxy init role_name    使用init命令初始化新角色的基本结构，节省创建各种目录和main.yml文件的时间
+ ansible-galaxy login   使用GitHub用户名和密码与Galaxy网站进行身份验证
+ ansible-galaxy import github_user github_repo   import命令要求您首先使用login命令进行身份验证。 一旦经过身份验证，您可以导入您拥有或已被授予访问权限的任何GitHub存储库
+ ansible-galaxy setup --list    使用-list选项显示您的Travis集成
+ ansible-galaxy setup --remove ID使用-remove选项禁用和删除Travis集成
